@@ -1,7 +1,7 @@
 <!--<p id="notice"><%= notice %></p>-->
 <div class="panel panel-default">
   <div class="panel-heading"><h2>Opis: <%= @pin.description %></h2></div>
-
+  <%= image_tag @pin.image.url(:medium) %><br/>
   <div class="panel-footer">
     <% if @pin.user == current_user %>
     <%= link_to 'Edycja', edit_pin_path(@pin) %> |
