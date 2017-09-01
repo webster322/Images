@@ -14,9 +14,11 @@
           <% @pins.each do |pin| %>
             <tr>
               <td><%= pin.description %></td>
+              <% if pin.user == current_user %>
               <td><%= link_to 'Wyświetl', pin %></td>
               <td><%= link_to 'Edycja', edit_pin_path(pin) %></td>
               <td><%= link_to 'Usuń', pin, method: :delete, data: { confirm: 'Jesteś pewien?' } %></td>
+              <% end %>
             </tr>
           <% end %>
       </tbody>
